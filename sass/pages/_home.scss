@@ -1,0 +1,26 @@
+.main-content {
+    display: flex;
+    @include respond(phone) {
+        flex-direction: column;
+    }
+}
+
+.sidebar-container {
+    flex: 0 0 6.1%;
+    height: 100vh;
+
+    @include respond(phone) {
+        flex: auto;
+        height: 8vh;
+    }
+}
+
+.container {
+    flex: 1;
+    height: 100vh;
+
+    @include respond(phone) {
+        flex: auto;
+        height: 92vh;
+    }
+}

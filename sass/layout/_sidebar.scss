@@ -1,0 +1,62 @@
+.sidebar {
+    height: 100%;
+    box-shadow: .1rem 0 5rem rgba(0, 0, 0, .1);
+
+    /* Flexbox Settings */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__logo-box {
+        flex: 0 0 10%;
+        margin-top: 15%;
+    }
+
+    &__logo {
+        width: 3rem;
+    }
+
+    &__buttons-group {
+        flex: 0 0 40%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    &__bottom {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+
+        svg {
+            margin-bottom: 350%;
+        }
+    }
+
+    @include respond(phone) {
+        flex-direction: row;
+
+        &__logo-box {
+            flex: auto;
+            margin-top: 0;
+            margin-left: 2rem;
+        }
+
+        &__buttons-group {
+            flex: auto;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+
+        &__bottom {
+            flex: auto;
+            flex-direction: row;
+
+            svg {
+                margin-bottom: 0;
+                margin-right: 2rem;
+            }
+        }
+    }
+}
