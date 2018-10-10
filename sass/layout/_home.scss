@@ -1,0 +1,48 @@
+.home {
+    position: relative;
+    height: 100%;
+    background-image: url(/img/main-bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+
+    &__bg-heading {
+        user-select: none;
+        position: absolute;
+        top: 5%;
+        left: 5%;
+    }
+
+    &__content-box {
+        padding-top: 5%;
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        line-height: 1;
+
+        @media only screen and (max-width: 21.875em) {
+            h1 {
+                font-size: 10rem;
+            }
+        }
+
+        h2 {
+            margin: 2rem 0;
+        }
+
+        .btn {
+            position: relative;
+            top: 1.5rem;
+        }
+    }
+
+    &__slider-box {
+        width: 15rem;
+        position: absolute;
+        bottom: 5%;
+        right: 15%;
+
+        display: flex;
+        justify-content: space-between;
+    }
+}
