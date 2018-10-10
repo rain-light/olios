@@ -53,6 +53,7 @@ body {
   font-size: 1.6rem;
   line-height: 1.7;
   font-family: 'Lato', sans-serif;
+  overflow: hidden;
 }
 
 .heading-exaggerated {
@@ -132,8 +133,119 @@ body {
 .btn--primary:hover {
   background-color: #fff;
   color: #0023ff;
-  -webkit-box-shadow: 0 1.1rem 5rem rgba(0, 0, 0, 0.3);
-          box-shadow: 0 1.1rem 5rem rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 1.1rem 5rem rgba(0, 0, 0, 0.1);
+          box-shadow: 0 1.1rem 5rem rgba(0, 0, 0, 0.1);
+}
+
+.navigation {
+  background-color: #fff;
+  width: 18vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 100;
+  right: 0;
+  -webkit-transform: translateX(18vw);
+          transform: translateX(18vw);
+  -webkit-box-shadow: 1rem 0 5rem rgba(0, 0, 0, 0.2);
+          box-shadow: 1rem 0 5rem rgba(0, 0, 0, 0.2);
+  -webkit-transition: -webkit-transform .4s ease-in-out;
+  transition: -webkit-transform .4s ease-in-out;
+  transition: transform .4s ease-in-out;
+  transition: transform .4s ease-in-out, -webkit-transform .4s ease-in-out;
+  /* CHECKBOX HACK SECTION */
+}
+
+.navigation__checkbox {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+}
+
+.navigation__label {
+  position: fixed;
+  top: 8%;
+  right: 2%;
+  z-index: 3000;
+  cursor: pointer;
+}
+
+.navigation__button {
+  background-color: #fff;
+  border-radius: 50%;
+  width: 5rem;
+  height: 5rem;
+  -webkit-box-shadow: 0 0rem 5rem rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0rem 5rem rgba(0, 0, 0, 0.1);
+}
+
+.navigation__line {
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  top: 47.5%;
+  width: 1.2rem;
+  height: 5%;
+  background-color: #0023ff;
+  border-radius: 5px;
+  -webkit-transition: -webkit-transform .1s;
+  transition: -webkit-transform .1s;
+  transition: transform .1s;
+  transition: transform .1s, -webkit-transform .1s;
+}
+
+.navigation__line::before, .navigation__line::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #0023ff;
+  position: absolute;
+  border-radius: 5px;
+}
+
+.navigation__line::before {
+  bottom: 5px;
+  -webkit-transition: top .1s .1s, opacity 0s .1s;
+  transition: top .1s .1s, opacity 0s .1s;
+}
+
+.navigation__line::after {
+  top: 5px;
+  -webkit-transition: top .1s .1s, -webkit-transform .1s;
+  transition: top .1s .1s, -webkit-transform .1s;
+  transition: transform .1s, top .1s .1s;
+  transition: transform .1s, top .1s .1s, -webkit-transform .1s;
+}
+
+.navigation__checkbox:checked + .navigation__label .navigation__line {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transition: -webkit-transform .15s .15s;
+  transition: -webkit-transform .15s .15s;
+  transition: transform .15s .15s;
+  transition: transform .15s .15s, -webkit-transform .15s .15s;
+}
+
+.navigation__checkbox:checked + .navigation__label .navigation__line::before, .navigation__checkbox:checked + .navigation__label .navigation__line::after {
+  top: 0;
+  -webkit-transition: top .15s, -webkit-transform .15s .15s;
+  transition: top .15s, -webkit-transform .15s .15s;
+  transition: top .15s, transform .15s .15s;
+  transition: top .15s, transform .15s .15s, -webkit-transform .15s .15s;
+}
+
+.navigation__checkbox:checked + .navigation__label .navigation__line::before {
+  opacity: 0;
+}
+
+.navigation__checkbox:checked + .navigation__label .navigation__line::after {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+.navigation__checkbox:checked ~ .navigation {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
 }
 
 .sidebar {
