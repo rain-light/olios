@@ -1,13 +1,12 @@
 .navigation {
     background-color: #fff;
-    width: 18vw;
+    width: 0;
     height: 100vh;
     position: absolute;
-    z-index: 100;
     right: 0;
-    transform: translateX(18vw);
+    z-index: 100;
     box-shadow: 1rem 0 5rem rgba(0, 0, 0, .2);
-    transition: transform .4s ease-in-out;
+    transition: width .4s ease-in-out;
 
     &__checkbox {
         visibility: hidden;
@@ -93,6 +92,6 @@
     }
 
     &__checkbox:checked ~ & {
-        transform: translateX(0);
+        width: 18vw;
     }
 }
