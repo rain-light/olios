@@ -34,6 +34,15 @@
         }
     }
 
+    &__link {
+
+        &--center {
+            @media only screen and (min-width: 37.5em) {
+                display: none;
+            }
+        }
+    }
+
     @include respond(phone) {
         flex-direction: row;
 
@@ -52,11 +61,18 @@
         &__bottom {
             flex: auto;
             flex-direction: row;
+            align-items: center;
 
             svg {
-                margin-bottom: 0;
-                margin-right: 2rem;
+                display: none;
             }
+        }
+    }
+
+    @media only screen and (min-width: 37.5em) {
+        
+        .navigation__label {
+            display: none;
         }
     }
 }
