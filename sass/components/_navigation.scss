@@ -24,6 +24,10 @@
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
+
+        @media only screen and (max-height: 28.125em) and (max-width: 37.5em) {
+            margin-bottom: 10%;
+        }
     }
 
     &__checkbox {
@@ -50,6 +54,11 @@
                 display: none;
             }
         }
+
+        @media only screen and (max-height: 28.125em) {
+            top: 3%;
+            right: 3%;
+        }
     }
 
     &__button {
@@ -66,6 +75,11 @@
             width: 1.2rem;
             margin-right: 2rem;
         }
+
+        @media only screen and (max-height: 28.125em) {
+            width: 3rem;
+            height: 3rem;
+        }
     }
 
     &__line {
@@ -78,6 +92,10 @@
         background-color: $color-primary;
         border-radius: 5px;
         transition: transform .1s;
+
+        @media only screen and (max-height: 28.125em) {
+            height: 2px;
+        }
         
         &::before,
         &::after {
@@ -159,6 +177,10 @@
         font-size: 1.4rem;
         font-weight: 700;
 
+        @media only screen and (max-height: 28.125em) {
+            font-size: 3vh;
+        }
+
         &::after {
             content: "";
             display: block;
@@ -188,6 +210,10 @@
 
     &__element {
         margin: 2rem 0;
+
+        @media only screen and (max-height: 28.125em) {
+            margin: 1rem 0;
+        }
     }
 
     &__link,
@@ -221,6 +247,10 @@
         @include respond(phone) {
             font-size: 6vw;
         }
+
+        @media only screen and (max-height: 28.125em) {
+            font-size: 3vh;
+        }
     }
 
     &__link-icon {
@@ -228,5 +258,10 @@
         height: 5rem;
         fill: $color-gray-light-3;
         transition: fill .3s;
+
+        @media only screen and (max-height: 28.125em) {
+            width: 10vh;
+            height: 10vh;
+        }
     }
 }
