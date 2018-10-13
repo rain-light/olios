@@ -19,3 +19,32 @@
         background-color: $color-primary;
     }
 }
+
+/* LEFT SIDEBAR RADIOBUTTONS */
+
+.main-radio {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+}
+
+/* PRODUCTS SMALL CATEGORY TITLE */
+
+.category {
+    width: 14.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__title {
+        text-transform: uppercase;
+        color: $color-gray-light-3;
+        font-size: 1.3rem;
+        font-weight: 700;
+    }
+
+    &__icon {
+        width: 4rem;
+        height: 4rem;
+    }
+}

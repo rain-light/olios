@@ -34,7 +34,7 @@
         }
     }
 
-    &__link {
+    &__icon {
 
         &--center {
             @media only screen and (min-width: 37.5em) {
@@ -73,6 +73,30 @@
         
         .navigation__label {
             display: none;
+        }
+    }
+}
+
+.main-radio {
+
+    &--home:checked {
+        
+        & ~ .sidebar-container [for="home-radio"] svg {
+            fill: $color-primary;
+        }
+    }
+
+    &--products:checked {
+        
+        & ~ .sidebar-container [for="products-radio"] svg {
+            fill: $color-primary;
+        }
+    }
+
+    &--search:checked {
+        
+        & ~ .sidebar-container [for="search-radio"] svg {
+            fill: $color-primary;
         }
     }
 }

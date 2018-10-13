@@ -72,6 +72,13 @@ body {
 .heading-2 {
   text-transform: uppercase;
   font-weight: 300;
+  font-size: 4.5rem;
+  line-height: 1;
+}
+
+.heading-3 {
+  text-transform: uppercase;
+  font-weight: 300;
   font-size: 2.6rem;
 }
 
@@ -95,6 +102,39 @@ body {
 
 .slider-dots--active {
   background-color: #0023ff;
+}
+
+/* LEFT SIDEBAR RADIOBUTTONS */
+.main-radio {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+}
+
+/* PRODUCTS SMALL CATEGORY TITLE */
+.category {
+  width: 14.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.category__title {
+  text-transform: uppercase;
+  color: #C1C1C1;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.category__icon {
+  width: 4rem;
+  height: 4rem;
 }
 
 .icon {
@@ -402,6 +442,7 @@ body {
 
 .navigation__link, .navigation__link:link, .navigation__link:visited {
   text-decoration: none;
+  outline: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -413,6 +454,14 @@ body {
           align-items: center;
 }
 
+@media only screen and (max-width: 37.5em) {
+  .navigation__link, .navigation__link:link, .navigation__link:visited {
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
 .navigation__link:hover span, .navigation__link:link:hover span, .navigation__link:visited:hover span {
   color: #8e8e8e;
 }
@@ -422,6 +471,9 @@ body {
 }
 
 .navigation__link-text {
+  display: block;
+  width: 60%;
+  text-align: right;
   text-transform: uppercase;
   color: #C1C1C1;
   font-weight: 700;
@@ -522,7 +574,7 @@ body {
 }
 
 @media only screen and (min-width: 37.5em) {
-  .sidebar__link--center {
+  .sidebar__icon--center {
     display: none;
   }
 }
@@ -574,6 +626,18 @@ body {
   .sidebar .navigation__label {
     display: none;
   }
+}
+
+.main-radio--home:checked ~ .sidebar-container [for="home-radio"] svg {
+  fill: #0023ff;
+}
+
+.main-radio--products:checked ~ .sidebar-container [for="products-radio"] svg {
+  fill: #0023ff;
+}
+
+.main-radio--search:checked ~ .sidebar-container [for="search-radio"] svg {
+  fill: #0023ff;
 }
 
 .home {
@@ -631,6 +695,97 @@ body {
           justify-content: space-between;
 }
 
+.products {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /* INDIVIDUAL GRID CELLS SECTION */
+}
+
+.products__container {
+  background-color: rgba(135, 206, 235, 0.3);
+  width: 70%;
+  height: 85%;
+  position: relative;
+  bottom: 2%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.products__top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.products__grid {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: 50%;
+  margin: 5% 0;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-grid-columns: 1fr 2fr 1fr;
+      grid-template-columns: 1fr 2fr 1fr;
+  grid-gap: 2.5rem;
+}
+
+.products__grid div {
+  background-color: orangered;
+}
+
+@media only screen and (max-height: 43.75em) {
+  .products__grid {
+    -ms-grid-columns: (min-content)[auto-fit];
+        grid-template-columns: repeat(auto-fit, -webkit-min-content);
+        grid-template-columns: repeat(auto-fit, min-content);
+  }
+}
+
+.products__white-table {
+  grid-column: span 2;
+}
+
+.products__bottom {
+  text-align: center;
+}
+
+.products__btn, .products__btn:link, .products__btn:visited {
+  text-decoration: none;
+  outline: none;
+  text-transform: uppercase;
+  color: #0023ff;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.search {
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
 .main-content {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -676,5 +831,62 @@ body {
             flex: auto;
     height: 92vh;
   }
+}
+
+section.home,
+section.products {
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+}
+
+.home,
+.products {
+  -webkit-transition: opacity .4s, visibility .4s, -webkit-transform .4s;
+  transition: opacity .4s, visibility .4s, -webkit-transform .4s;
+  transition: opacity .4s, visibility .4s, transform .4s;
+  transition: opacity .4s, visibility .4s, transform .4s, -webkit-transform .4s;
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
+}
+
+.search {
+  -webkit-transform: scale(2);
+          transform: scale(2);
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+}
+
+/* GENERAL NAVIGATION RADIOBUTTONS HACK */
+.main-radio--home:checked ~ main .home,
+.main-radio--products:checked ~ main .products {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  height: 100%;
+}
+
+.main-radio--home:active ~ main .home {
+  -webkit-transition: opacity .4s, visibility .4s, -webkit-transform .4s;
+  transition: opacity .4s, visibility .4s, -webkit-transform .4s;
+  transition: opacity .4s, visibility .4s, transform .4s;
+  transition: opacity .4s, visibility .4s, transform .4s, -webkit-transform .4s;
+}
+
+.main-radio--products:active ~ main .products {
+  -webkit-transition: opacity .4s, visibility .4s, -webkit-transform .4s;
+  transition: opacity .4s, visibility .4s, -webkit-transform .4s;
+  transition: opacity .4s, visibility .4s, transform .4s;
+  transition: opacity .4s, visibility .4s, transform .4s, -webkit-transform .4s;
+}
+
+.main-radio--search:checked ~ main .search {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  visibility: visible;
+  opacity: 1;
 }
 /*# sourceMappingURL=style.css.map */

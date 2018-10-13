@@ -220,10 +220,14 @@
     &__link:link,
     &__link:visited {
         text-decoration: none;
-
+        outline: none;
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        @include respond(phone) {
+            justify-content: space-evenly;
+        }
 
         &:hover {
 
@@ -238,6 +242,9 @@
     }
 
     &__link-text {
+        display: block;
+        width: 60%;
+        text-align: right;
         text-transform: uppercase;
         color: $color-gray-light-3;
         font-weight: 700;

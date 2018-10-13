@@ -1,0 +1,83 @@
+.products {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__container {
+        background-color: rgba(skyblue, .3);
+        width: 70%;
+        height: 85%;
+        position: relative;
+        bottom: 2%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__grid {
+        flex: 1;
+        height: 50%;
+        margin: 5% 0;
+
+        div {
+            background-color: orangered;
+        }
+
+        display: grid;
+        justify-content: center;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-gap: 2.5rem;
+
+        @include respond(phone) {
+
+        }
+
+        @media only screen and (max-height: 43.75em) {
+            grid-template-columns: repeat(auto-fit, min-content);
+        }
+    }
+
+    /* INDIVIDUAL GRID CELLS SECTION */
+
+    &__red-seat {
+
+    }
+
+    &__white-table {
+        grid-column: span 2;
+    }
+
+    &__blue-seat {
+
+    }
+
+    &__modern-bed {
+
+    }
+
+    &__dark-seat {
+
+    }
+
+    &__bottom {
+        text-align: center;
+    }
+
+    &__btn,
+    &__btn:link,
+    &__btn:visited {
+        text-decoration: none;
+        outline: none;
+        text-transform: uppercase;
+        color: $color-primary;
+        font-weight: 700;
+        font-size: 1.3rem;
+    }
+}

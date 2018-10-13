@@ -24,3 +24,50 @@
         height: 92vh;
     }
 }
+
+section.home,
+section.products {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+}
+
+.home,
+.products {
+    transition: opacity .4s, visibility .4s, transform .4s;
+    transform: scale(.5);
+}
+
+.search {
+    transform: scale(2);
+    visibility: hidden;
+    opacity: 0;
+    transition: all .4s;
+}
+
+/* GENERAL NAVIGATION RADIOBUTTONS HACK */
+
+.main-radio {
+
+    &--home:checked ~ main .home,
+    &--products:checked ~ main .products {
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1);
+        height: 100%;
+    }
+
+    &--home:active ~ main .home {
+        transition: opacity .4s, visibility .4s, transform .4s
+    }
+
+    &--products:active ~ main .products {
+        transition: opacity .4s, visibility .4s, transform .4s;
+    }
+
+    &--search:checked ~ main .search {
+        transform: scale(1);
+        visibility: visible;
+        opacity: 1;
+    }
+}

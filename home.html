@@ -66,32 +66,33 @@
         </div>
     </nav>
     <div class="main-content">
+        <input type="radio" class="main-radio main-radio--home" id="home-radio" checked name="general-navigation-radio">
+        <input type="radio" class="main-radio main-radio--products" id="products-radio" name="general-navigation-radio">
+        <input type="radio" class="main-radio main-radio--search" id="search-radio" name="general-navigation-radio">
         <div class="sidebar-container">
             <nav class="sidebar">
                 <div class="sidebar__logo-box">
                     <img src="/img/logo.png" alt="Olios Logo" class="sidebar__logo">
                 </div>
                 <div class="sidebar__buttons-group">
-                    <a href="#" class="sidebar__link">
+                    <label for="home-radio" class="sidebar__label">
                         <svg class="icon">
                             <use xlink:href="/img/sprite.svg#icon-home"></use>
                         </svg>
-                    </a>
-                    <a href="#" class="sidebar__link">
+                    </label>
+                    <label for="products-radio" class="sidebar__label">
                         <svg class="icon">
                             <use xlink:href="/img/sprite.svg#icon-basket"></use>
                         </svg>
-                    </a>
-                    <a href="#" class="sidebar__link">
+                    </label>
+                    <label for="search-radio" class="sidebar__label">
                         <svg class="icon">
                             <use xlink:href="/img/sprite.svg#icon-search"></use>
                         </svg>
-                    </a>
-                    <a href="#" class="sidebar__link sidebar__link--center">
-                        <svg class="icon">
+                    </label>
+                        <svg class="icon sidebar__icon--center">
                             <use xlink:href="/img/sprite.svg#icon-in"></use>
                         </svg>
-                    </a>
                 </div>
                 <div class="sidebar__bottom">
                     <a href="#" class="sidebar__link sidebar__link--bottom">
@@ -114,7 +115,7 @@
                 </div>
                 <div class="home__content-box">
                     <h1 class="heading-huge">Olios</h1>
-                    <h2 class="heading-2">Newest Furniture Shop Template</h2>
+                    <h2 class="heading-3">Newest Furniture Shop Template</h2>
                     <a href="#" class="btn btn--primary">View More</a>
                 </div>
                 <div class="home__slider-box">
@@ -123,6 +124,42 @@
                     <div class="slider-dots"></div>
                     <div class="slider-dots"></div>
                 </div>
+            </section>
+            <section class="products">
+                <div class="products__container">
+                    <div class="products__top">
+                        <h2 class="heading-2">Products</h2>
+                        <div class="category">
+                            <span class="category__title">Living Room</span>
+                            <svg class="category__icon">
+                                <use xlink:href="/img/sprite-2.svg#icon-living-room"></use>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="products__grid">
+                        <div class="products__red-seat">
+                            Red Seat
+                        </div>
+                        <div class="products__white-table">
+                            White Table
+                        </div>
+                        <div class="products__blue-seat">
+                            Blue Seat
+                        </div>
+                        <div class="products__modern-bed">
+                            Modern Bed
+                        </div>
+                        <div class="products__dark-seat">
+                            Dark Seat
+                        </div>
+                    </div>
+                    <div class="products__bottom">
+                        <a href="#" class="products__btn">Show more Products</a>
+                    </div>
+                </div>
+            </section>
+            <section class="search">
+                Search
             </section>
         </main>
     </div>
