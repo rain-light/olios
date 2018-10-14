@@ -1,0 +1,114 @@
+.products {
+    overflow-y: scroll;
+
+    /* GENERAL */
+
+    &__container {
+        background-color: rgba(cyan, .1);
+        width: 75%;
+        height: 85%;
+        margin: 5% 10%;
+
+        @include respond(phone) {
+            width: 97%;
+            height: auto;
+            margin: 5% auto;
+
+            min-height: 100vh; //TESTING
+        }
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* TOP */
+
+    &__top {
+        flex: 0 0 10%;
+        
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    &__category {
+        flex: 0 0 18rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &-title {
+            text-transform: uppercase;
+            color: $color-gray-light-3;
+            font-size: 1.6rem;
+        }
+
+        &-icon {
+            width: 5rem;
+            height: 5rem;
+            fill: $color-gray-light-3;
+        }
+
+        @media only screen and (max-width: 21.4375em) {
+            margin-top: 2rem;
+        }
+    }
+
+    /* CENTER */
+
+    &__items {
+        background-color: turquoise;
+        flex: 1;
+        padding: 5% 0;
+
+        /* CSS GRID SETTINGS */
+        display: grid;
+        align-content: center;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: repeat(2, 18vw);
+        grid-gap: 1.5vw;
+
+        @include respond(phone) {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(5, 60vh);
+        }
+    }
+
+    &__item {
+
+        &--small {
+            background-color: deepskyblue;
+        }
+
+        &--normal {
+            background-color: deeppink;
+        }
+
+        &--big {
+            background-color: darkgreen;
+            grid-column: span 2;
+            
+            @include respond(phone) {
+                grid-column: auto;
+            }
+        }
+    }
+
+    /* BOTTOM */
+
+    &__bottom {
+        flex: 0 0 10%;
+        text-align: center;
+    }
+
+    &__showmore,
+    &__showmore:link,
+    &__showmore:visited {
+        text-decoration: none;
+        text-transform: uppercase;
+        color: $color-primary;
+        font-weight: 700;
+        font-size: 1.6rem;
+    }
+}
