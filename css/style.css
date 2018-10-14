@@ -27,6 +27,7 @@ ORDER: Base + typography > general layout + grid > page layout > components
 
 html {
   font-size: 62.5%;
+  overflow: hidden;
 }
 
 @media only screen and (max-width: 75em) {
@@ -693,92 +694,6 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-}
-
-.products {
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  /* INDIVIDUAL GRID CELLS SECTION */
-}
-
-.products__container {
-  background-color: rgba(135, 206, 235, 0.3);
-  width: 70%;
-  height: 85%;
-  position: relative;
-  bottom: 2%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.products__top {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.products__grid {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  height: 50%;
-  margin: 5% 0;
-  display: -ms-grid;
-  display: grid;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-grid-columns: 1fr 2fr 1fr;
-      grid-template-columns: 1fr 2fr 1fr;
-  grid-gap: 2.5rem;
-}
-
-.products__grid div {
-  background-color: orangered;
-}
-
-@media only screen and (max-height: 43.75em) {
-  .products__grid {
-    -ms-grid-columns: (min-content)[auto-fit];
-        grid-template-columns: repeat(auto-fit, -webkit-min-content);
-        grid-template-columns: repeat(auto-fit, min-content);
-  }
-}
-
-.products__white-table {
-  grid-column: span 2;
-}
-
-.products__bottom {
-  text-align: center;
-}
-
-.products__btn, .products__btn:link, .products__btn:visited {
-  text-decoration: none;
-  outline: none;
-  text-transform: uppercase;
-  color: #0023ff;
-  font-weight: 700;
-  font-size: 1.3rem;
 }
 
 .search {
