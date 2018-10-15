@@ -1,10 +1,10 @@
 .products {
+    background-color: $color-white-dark;
     overflow-y: scroll;
 
     /* GENERAL */
 
     &__container {
-        background-color: rgba(cyan, .1);
         width: 75%;
         height: 85%;
         margin: 5% 10%;
@@ -15,6 +15,11 @@
             margin: 5% auto;
 
             min-height: 100vh; //TESTING
+        }
+
+        @media only screen and (min-width: 37.5625em) and (max-width: 66.25em) {
+            width: 90%;
+            margin: 10% 2.5%;
         }
 
         display: flex;
@@ -58,7 +63,6 @@
     /* CENTER */
 
     &__items {
-        background-color: turquoise;
         flex: 1;
         padding: 5% 0;
 
@@ -71,22 +75,27 @@
 
         @include respond(phone) {
             grid-template-columns: 1fr;
-            grid-template-rows: repeat(5, 60vh);
+            grid-template-rows: repeat(5, minmax(60vh, min-content));
+            grid-gap: 4rem;
+        }
+
+        @media only screen and (min-width: 37.5625em) and (max-width: 66.25em) {
+            grid-template-rows: repeat(2, 30vw);
         }
     }
 
     &__item {
 
         &--small {
-            background-color: deepskyblue;
+
         }
 
         &--normal {
-            background-color: deeppink;
+
         }
 
         &--big {
-            background-color: darkgreen;
+
             grid-column: span 2;
             
             @include respond(phone) {
