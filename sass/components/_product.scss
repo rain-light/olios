@@ -1,0 +1,162 @@
+.product {
+    background-color: #fff;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, .1);
+    width: 100%;
+    height: 100%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+
+    &--vertical {
+        grid-template-rows: 3fr 2fr;
+
+        @include respond(phone) {
+            grid-template-rows: auto;
+            grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+        }
+
+        @media only screen and (min-width: 20.5625em) and (max-width: 37.5em) {
+            .product__text {
+                order: -1;
+            }
+        }
+    }
+
+    &--horizontal {
+        grid-template-columns: 3fr 2fr;
+
+        @include respond(phone) {
+            grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+        }
+    }
+
+    &--normal {
+
+        .product__text {
+
+            @media only screen and (max-width: 20.5625em) {
+                position: relative;
+                bottom: 4rem;
+            }
+        }
+    }
+
+    &--big {
+
+        .product__text {
+            justify-self: start;
+            
+            @include respond(phone) {
+                justify-self: auto;
+            }
+
+            @media only screen and (max-width: 20.5625em) {
+                position: relative;
+                bottom: 4rem;
+            }
+        }
+
+        .product__title {
+            font-size: 3rem;
+
+            @media only screen and (min-width: 37.5625em) and (max-width: 66.25em) {
+                font-size: 2.5vw;
+            }
+
+            @include respond(phone) {
+                font-size: 7vw;
+                line-height: 1.5;
+            }
+        }
+
+        .product__subtitle {
+            font-size: 2rem;
+
+            @media only screen and (min-width: 37.5625em) and (max-width: 66.25em) {
+                font-size: 2vw;
+            }
+
+            @include respond(phone) {
+                font-size: 4vw;
+                line-height: 1.2;
+            }
+        }
+
+        .product__price {
+            font-size: 1.8rem;
+
+            @media only screen and (min-width: 37.5625em) and (max-width: 66.25em) {
+                font-size: 1.5vw;
+            }
+
+            @include respond(phone) {
+                font-size: 3vw;
+                line-height: 1.2;
+            }
+        }
+    }
+
+    &__img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    &__text {
+        max-width: 100%;
+        max-height: 100%;
+        padding-left: 1rem;
+        padding-bottom: 1rem;
+
+        @include respond(phone) {
+            max-height: none;
+            padding: 2rem;
+        }
+    }
+
+    &__title {
+        text-transform: uppercase;
+        font-size: 2.2rem;
+        font-weight: 300;
+        line-height: 1;
+
+        @media only screen and (min-width: 37.5625em) and (max-width: 66.25em) {
+           font-size: 2vw;
+        }
+        
+        @include respond(phone) {
+            font-size: 7vw;
+            line-height: 1.5;
+        }
+    }
+
+    &__subtitle {
+        color: $color-gray-light-3;
+        font-size: 1.5rem;
+        line-height: 1;
+        
+        @media only screen and (min-width: 37.5625em) and (max-width: 66.25em) {
+           font-size: 1.5vw;
+        }
+
+        @include respond(phone) {
+            font-size: 4vw;
+            line-height: 1.2;
+        }
+    }
+
+    &__price {
+        color: $color-primary;
+        font-weight: 700;
+        margin-top: 5px;
+        line-height: 1;
+        
+        @media only screen and (min-width: 37.5625em) and (max-width: 66.25em) {
+           font-size: 1.2vw;
+        }
+
+        @include respond(phone) {
+            font-size: 3vw;
+            line-height: 1.2;
+        }
+    }
+}
