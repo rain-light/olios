@@ -1,4 +1,41 @@
 .search {
     height: 100%;
-    background-color: rgba(255, 255, 255, .3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__container {
+        position: relative;
+        flex: 0 0 80%;
+        height: 60%;
+
+        @include respond(phone) {
+            height: 80%;
+        }
+
+        @media only screen and (max-height: 37.5em) {
+            height: 90%;
+        }
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__main {
+        flex: 0 0 30%;
+    }
+
+    &__results {
+        flex: 1;
+        padding: 5% 0;
+        
+        display: flex;
+        align-items: center;
+        align-content: space-evenly;
+        flex-wrap: wrap;
+    }
+
+    &__bottom {
+        flex: 0 0 5%;
+    }
 }
