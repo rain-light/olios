@@ -36,6 +36,18 @@
         }
     }
 
+    .icon {
+        min-width: 2rem;
+        min-height: 2rem;
+        width: 1.5vw;
+        height: 1.5vw;
+
+        @include respond(phone) {
+            width: 3vh;
+            height: 3vh;
+        }
+    }
+
     &__icon {
 
         &--center {
