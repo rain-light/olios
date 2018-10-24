@@ -1,0 +1,318 @@
+.item {
+    overflow-y: scroll;
+    background-color: #efefef;
+    width: 100%;
+
+    &__grid {
+        width: 100%;
+        height: 100%;
+
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: 5fr 2fr;
+
+        @include respond(phone) {
+            grid-template-columns: 1fr;
+            grid-template-rows: minmax(28.6rem, 60vh) min-content min-content;
+        }
+
+        @media only screen and (max-height: 31.25em) {
+            grid-template-rows: 3fr 1fr;
+        }
+
+        @media only screen and (max-width: 75em) and (min-height: 50em) {
+            grid-template-columns: 1fr;
+            grid-template: minmax(28.6rem, 60vh) min-content min-content;
+        }
+    }
+
+    /* PHOTO ZONE STYLING */
+
+    &__picture {
+        position: relative;
+        z-index: 2;
+        background-color: #fff;
+        grid-row: span 2;
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+
+        @include respond(phone) {
+            grid-row: auto;
+            justify-content: center;
+        }
+
+        @media only screen and (max-width: 75em) and (min-height: 50em) {
+            grid-row: auto;
+            justify-content: center;
+        }
+
+        padding: 1rem;
+        box-shadow: .1rem .1rem 1rem rgba(0, 0, 0, .1);
+    }
+
+    &__picture-top {
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 10%;
+    }
+
+    &__picture-likes {
+        display: flex;
+        align-items: center;
+    }
+
+    &__picture-likes-count {
+        font-size: 2rem;
+        font-weight: 300;
+        margin-right: 1rem;
+    }
+
+    &__picture-img {
+        max-width: 100%;
+        object-fit: contain;
+
+        @include respond(phone) {
+            height: 80%;
+        }
+    }
+
+    &__picture-bottom {
+        padding: 0 10%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__picture-size-icons {
+        display: flex;
+
+        svg:first-child {
+            margin-right: 1rem;
+        }
+    }
+
+    &__picture-geo-search-icons {
+        display: flex;
+
+        svg:first-child {
+            margin-right: 1rem;
+        }
+    }
+
+    /* INFO AND TEXT ZONE STYLING */
+
+    &__info {
+        background-color: $color-white-dark;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @include respond(phone) {
+            min-height: 60vh;
+        }
+    }
+
+    &__info-content {
+        width: calc((-0.0072727272727273 * 100vw) + 74.163636363636%);
+        height: 80%;
+        position: relative;
+        right: 7%;
+
+        @include respond(phone) {
+            position: static;
+            margin: 5% auto;
+        }
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__info-category {
+
+        .heading-2 {
+            font-size: 3rem;
+
+            @include respond(phone) {
+                font-size: 6.5vw;
+            }
+        }
+
+        .products__category {
+            flex: 0 0 13rem;
+
+            @include respond(phone) {
+                flex: 0 0 40%;
+            }
+        }
+
+        .products__category-title {
+            font-size: 1.2rem;
+
+            @include respond(phone) {
+                font-size: 3vw;
+            }
+        }
+
+        .products__category-icon {
+            width: 3.5rem;
+            height: 3.5rem;
+        }
+    }
+
+    &__info-text {
+        margin-top: 8%;
+    }
+
+    &__info-heading {
+        text-transform: uppercase;
+        font-size: 3.5rem;
+        font-weight: 300;
+        @include respond(phone) {
+            font-size: 7vw;
+        }
+    }
+
+    &__info-paragraph {
+        margin-top: .5rem;
+        color: #A6A6A6;
+        font-size: 1.4rem;
+        max-width: 70%;
+
+        @include respond(tab-port) {
+            max-width: none;
+        }
+
+        @include respond(phone) {
+            font-size: 4vw;
+        }
+    }
+
+    &__info-shop {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        @include respond(phone) {
+            margin-top: 4rem;
+        }
+    }
+
+    &__info-cost-box {
+         align-self: stretch;
+         display: flex;
+         flex-direction: column;
+         justify-content: space-between;
+   
+    }
+
+    &__info-cost {
+        color: $color-primary;
+        font-size: 3rem;
+        font-weight: 700;
+    }
+
+    &__info-small-title {
+        display: block;
+        text-transform: uppercase;
+        font-weight: 300;
+        font-size: 1.3rem;
+
+        @include respond(phone) {
+            font-size: 2.5vw;
+        }
+    }
+
+    &__info-quantity-box {
+        align-self: stretch;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__info-quantity-input {
+        outline: none;
+        border: none;
+        font-family: inherit;
+        font-size: inherit;
+        padding: 1rem;
+        width: 5rem;
+        border-radius: 35%;
+    }
+
+    &__info-shop-right-box {
+        display: flex;
+        align-items: center;
+    }
+    
+    .btn {
+        align-self: flex-end;
+
+        @include respond(phone) {
+            font-size: 4vw;
+            margin-left: 1rem;
+        }
+    }
+
+    /* RECOMMENDED ARTICLES STYLING */
+
+    &__recommended {
+        position: relative;
+        z-index: 1;
+        background-color: #fff;
+        padding: 5%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        box-shadow: .1rem -.1rem 1rem rgba(0, 0, 0, .15);
+    }
+
+    &__recommended-title {
+        text-transform: uppercase;
+        font-size: 1.9vmin;
+        line-height: 1;
+        color: $color-gray-light-2;
+        transform: rotate(-90deg);
+    }
+
+    &__recommended-items {
+        flex: 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__recommended-product {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__recommended-product-img {
+        max-height: 15vmin;
+        object-fit: contain;
+    }
+
+    &__recommended-product-text {
+        align-self: flex-start;
+        text-transform: uppercase;
+        font-weight: 300;
+        font-size: 1.6rem;
+
+        @include respond(phone) {
+            font-size: 2.6vmin;
+        }
+    }
+
+    &__recommended-description {
+        font-size: 1.2rem;
+        color: $color-gray-light-3;
+
+        @include respond(phone) {
+            font-size: 2vmin;
+        }
+    }
+}

@@ -8,10 +8,13 @@
 .sidebar-container {
     flex: 0 0 6.1%;
     height: 100vh;
+    min-height: 5.2rem;
+    min-width: 6rem;
 
     @include respond(phone) {
         flex: auto;
         height: 8vh;
+        min-width: none;
     }
 }
 
@@ -43,6 +46,49 @@ section.products {
     visibility: hidden;
     opacity: 0;
     transition: all .4s;
+}
+
+.item {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+
+    @media only screen and (min-width: 37.5em) {
+        &__picture {
+            transform: translateX(-120%);
+        }
+
+        &__info {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        &__recommended {
+            transform: translateY(100%);
+        }
+
+        & > &__grid > * {
+            transition: all .4s;
+        }
+
+        &:target > &__grid > * {
+            transform: translate(0, 0);
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+
+    &:target ~ section {
+        visibility: hidden !important;
+        opacity: 0 !important;
+        height: 0 !important;
+    }
+
+    &:target {
+        height: 100%;
+        visibility: visible;
+        opacity: 1;
+    }
 }
 
 /* GENERAL NAVIGATION RADIOBUTTONS HACK */

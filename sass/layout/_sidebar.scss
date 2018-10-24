@@ -1,4 +1,6 @@
 .sidebar {
+    position: relative;
+    z-index: 3;
     height: 100%;
     box-shadow: .1rem 0 5rem rgba(0, 0, 0, .1);
 

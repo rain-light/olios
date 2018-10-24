@@ -6,7 +6,15 @@
     cursor: pointer;
     transition: fill .5s;
 
-    &:hover {
+    &:not(.icon--pink):hover {
+        fill: $color-primary;
+    }
+
+    &--pink {
+        fill: $color-pink;
+    }
+
+    &--blue {
         fill: $color-primary;
     }
 }

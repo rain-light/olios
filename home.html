@@ -109,6 +109,96 @@
             </nav>
         </div>
         <main class="container">
+            <section class="item" id="item">
+                <div class="item__grid">
+                    <div class="item__picture">
+                        <div class="item__picture-top">
+                            <div class="item__picture-likes">
+                                <span class="item__picture-likes-count">207</span>
+                                <svg class="icon icon--pink">
+                                    <use xlink:href="/img/sprite.svg#icon-heart"></use>
+                                </svg>
+                            </div>
+                        </div>
+                        <img src="/img/white-seat.png" alt="White Seat" class="item__picture-img">
+                        <div class="item__picture-bottom">
+                            <div class="item__picture-size-icons">
+                                <svg class="icon icon--blue">
+                                    <use xlink:href="/img/sprite.svg#icon-add"></use>
+                                </svg>
+                                <svg class="icon icon--blue">
+                                    <use xlink:href="/img/sprite.svg#icon-remove"></use>
+                                </svg>
+                            </div>
+                            <div class="item__picture-geo-search-icons">
+                                <svg class="icon">
+                                    <use xlink:href="/img/sprite.svg#icon-pin"></use>
+                                </svg>
+                                <svg class="icon">
+                                    <use xlink:href="/img/sprite.svg#icon-search"></use>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item__info">
+                        <div class="item__info-content">
+                            <div class="item__info-category">
+                                <div class="products__top">
+                                    <h2 class="heading-2">Products</h2>
+                                    <div class="products__category">
+                                        <h5 class="products__category-title">Living Room</h5>
+                                        <svg class="products__category-icon">
+                                            <use xlink:href="/img/sprite-2.svg#icon-living-room"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item__info-text">
+                                <h2 class="item__info-heading"><span class="u-color-blue">White Seat</span> - Office</h2>
+                                <p class="item__info-paragraph">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    Ut fermentum interdum malesuada. Sed ornare posuere lobortis.
+                                </p>
+                            </div>
+                            <div class="item__info-shop">
+                                <div class="item__info-cost-box">
+                                    <span class="item__info-small-title">Cost</span>
+                                    <span class="item__info-cost">
+                                        $65
+                                    </span>
+                                </div>
+                                <div class="item__info-shop-right-box">
+                                    <div class="item__info-quantity-box">
+                                        <span class="item__info-small-title">Quantity</span>
+                                        <input type="text" class="item__info-quantity-input" value="1">
+                                    </div>
+                                    <a href="#" class="btn btn--primary">Add to Card</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item__recommended">
+                        <h5 class="item__recommended-title">Recommended</h5>
+                        <div class="item__recommended-items">
+                            <div class="item__recommended-product">
+                                <img src="/img/dark-seat.png" alt="Dark Seat" class="item__recommended-product-img">
+                                <h5 class="item__recommended-product-text">Dark Seat</h5>
+                                <span class="item__recommended-description">Lorem ipsum dolor sit amet</span>
+                            </div>
+                            <div class="item__recommended-product">
+                                <img src="/img/blue-seat.png" alt="Blue Seat" class="item__recommended-product-img">
+                                <h5 class="item__recommended-product-text">Blue Seat</h5>
+                                <span class="item__recommended-description">Lorem ipsum dolor sit amet</span>
+                            </div>
+                            <div class="item__recommended-product">
+                                <img src="/img/red-seat.png" alt="Red Seat" class="item__recommended-product-img">
+                                <h5 class="item__recommended-product-text">Red Seat</h5>
+                                <span class="item__recommended-description">Lorem ipsum dolor sit amet</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
             <section class="home">
                 <div class="home__bg-heading">
                     <h1 class="heading-exaggerated" unselectable>Newest</h1>
@@ -116,7 +206,7 @@
                 <div class="home__content-box">
                     <h1 class="heading-huge">Olios</h1>
                     <h2 class="heading-3">Newest Furniture Shop Template</h2>
-                    <a href="#" class="btn btn--primary">View More</a>
+                    <a href="#item" class="btn btn--primary">View More</a>
                 </div>
                 <div class="home__slider-box">
                     <div class="slider-dots slider-dots--active"></div>
@@ -136,21 +226,24 @@
                             </svg>
                         </div>
                     </div>
-                    <div class="products__items">
+                    <div class="products__items">  
                         <div class="products__item products__item--small">
-                            <div class="product product--vertical">
-                                <img src="/img/red-seat.png" alt="Red Seat" class="product__img product__img--small">
-                                <div class="product__text">
-                                    <div class="product__name">
-                                        <h4 class="product__title">Red Seat</h4>
-                                        <span class="product__subtitle">Lorem ipsum dolor sit amet</span>
+                            <a href="#item" class="link-to-item">
+                                <div class="product product--vertical">
+                                    <img src="/img/red-seat.png" alt="Red Seat" class="product__img product__img--small">
+                                    <div class="product__text">
+                                        <div class="product__name">
+                                            <h4 class="product__title">Red Seat</h4>
+                                            <span class="product__subtitle">Lorem ipsum dolor sit amet</span>
+                                        </div>
+                                        <span class="product__price">$45</span>
                                     </div>
-                                    <span class="product__price">$45</span>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                         <div class="products__item products__item--big">
-                            <div class="product product--horizontal product--big">
+                            <a href="#item" class="link-to-item">
+                                <div class="product product--horizontal product--big">
                                 <img src="/img/white-table.png" alt="White Table" class="product__img product__img--big">
                                 <div class="product__text">
                                     <div class="product__name">
@@ -160,9 +253,11 @@
                                     <span class="product__price">$350</span>
                                 </div>
                             </div>
+                            </a>
                         </div>
                         <div class="products__item products__item--small">
-                            <div class="product product--vertical">
+                            <a href="#item" class="link-to-item">
+                                <div class="product product--vertical">
                                 <img src="/img/blue-seat.png" alt="Blue Seat" class="product__img product__img--small">
                                 <div class="product__text">
                                     <div class="product__name">
@@ -172,9 +267,11 @@
                                     <span class="product__price">$35</span>
                                 </div>
                             </div>
+                            </a>
                         </div>
                         <div class="products__item products__item--normal">
-                            <div class="product product--horizontal product--normal">
+                            <a href="#item" class="link-to-item">
+                                <div class="product product--horizontal product--normal">
                                 <img src="/img/modern-bed.png" alt="Modern Bed" class="product__img product__img--normal">
                                 <div class="product__text">
                                     <div class="product__name">
@@ -184,9 +281,11 @@
                                     <span class="product__price">$120</span>
                                 </div>
                             </div>
+                            </a>
                         </div>
                         <div class="products__item products__item--small">
-                            <div class="product product--vertical">
+                            <a href="#item" class="link-to-item">
+                                <div class="product product--vertical">
                                 <img src="/img/dark-seat.png" alt="Dark Seat" class="product__img product__img--small">
                                 <div class="product__text">
                                     <div class="product__name">
@@ -196,6 +295,7 @@
                                     <span class="product__price">$50</span>
                                 </div>
                             </div>
+                            </a>
                         </div>
                     </div>
                     <div class="products__bottom">
