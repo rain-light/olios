@@ -25,6 +25,9 @@
     @include respond(phone) {
         flex: auto;
         height: 92vh;
+
+        position: absolute;
+        bottom: 0;
     }
 }
 

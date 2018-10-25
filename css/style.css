@@ -1764,6 +1764,8 @@ body {
         -ms-flex: auto;
             flex: auto;
     height: 92vh;
+    position: absolute;
+    bottom: 0;
   }
 }
 
