@@ -25,9 +25,6 @@
     @include respond(phone) {
         flex: auto;
         height: 92vh;
-
-        position: absolute;
-        bottom: 0;
     }
 }
 
@@ -51,48 +48,51 @@ section.products {
     transition: all .4s;
 }
 
-.item {
-    opacity: 0;
-    visibility: hidden;
-    height: 0;
+@media only screen and (min-aspect-ratio: 71/70) {
+        .item {
+        opacity: 0;
+        visibility: hidden;
+        height: 0;
 
-    @media only screen and (min-width: 37.5em) {
-        &__picture {
-            transform: translateX(-120%);
+        @media only screen and (min-width: 37.5em) {
+            &__picture {
+                transform: translateX(-120%);
+            }
+
+            &__info {
+                opacity: 0;
+                visibility: hidden;
+            }
+
+            &__recommended {
+                transform: translateY(100%);
+            }
+
+            & > &__grid > * {
+                transition: all .4s;
+            }
+
+            &:target > &__grid > * {
+                transform: translate(0, 0);
+                visibility: visible;
+                opacity: 1;
+            }
         }
 
-        &__info {
-            opacity: 0;
-            visibility: hidden;
+        &:target ~ section {
+            visibility: hidden !important;
+            opacity: 0 !important;
+            height: 0 !important;
         }
 
-        &__recommended {
-            transform: translateY(100%);
-        }
-
-        & > &__grid > * {
-            transition: all .4s;
-        }
-
-        &:target > &__grid > * {
-            transform: translate(0, 0);
+        &:target {
+            height: 100%;
             visibility: visible;
             opacity: 1;
         }
     }
-
-    &:target ~ section {
-        visibility: hidden !important;
-        opacity: 0 !important;
-        height: 0 !important;
-    }
-
-    &:target {
-        height: 100%;
-        visibility: visible;
-        opacity: 1;
-    }
 }
+
 
 /* GENERAL NAVIGATION RADIOBUTTONS HACK */
 

@@ -1272,6 +1272,12 @@ body {
   /* RECOMMENDED ARTICLES STYLING */
 }
 
+@media only screen and (max-aspect-ratio: 70 / 71) {
+  .item {
+    display: none;
+  }
+}
+
 .item__grid {
   width: 100%;
   height: 100%;
@@ -1764,8 +1770,6 @@ body {
         -ms-flex: auto;
             flex: auto;
     height: 92vh;
-    position: absolute;
-    bottom: 0;
   }
 }
 
@@ -1795,13 +1799,15 @@ section.products {
   transition: all .4s;
 }
 
-.item {
-  opacity: 0;
-  visibility: hidden;
-  height: 0;
+@media only screen and (min-aspect-ratio: 71 / 70) {
+  .item {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+  }
 }
 
-@media only screen and (min-width: 37.5em) {
+@media only screen and (min-aspect-ratio: 71 / 70) and (min-width: 37.5em) {
   .item__picture {
     -webkit-transform: translateX(-120%);
             transform: translateX(-120%);
@@ -1826,16 +1832,17 @@ section.products {
   }
 }
 
-.item:target ~ section {
-  visibility: hidden !important;
-  opacity: 0 !important;
-  height: 0 !important;
-}
-
-.item:target {
-  height: 100%;
-  visibility: visible;
-  opacity: 1;
+@media only screen and (min-aspect-ratio: 71 / 70) {
+  .item:target ~ section {
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+  }
+  .item:target {
+    height: 100%;
+    visibility: visible;
+    opacity: 1;
+  }
 }
 
 /* GENERAL NAVIGATION RADIOBUTTONS HACK */
